@@ -1,0 +1,28 @@
+name: Windows build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up MSVC
+        uses: microsoft/setup-msvc@v1.6.2
+        with:
+          msvc-version: 'Latest'
+      - name: Build
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+          cmake --build . --config Release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: qcp
+          path: build/qcp.exe
