@@ -109,7 +109,7 @@ int main(int argc, char* argv[])
     {
         cout << "使用方法：" << argv[0] << " [keyword] <parameters>" << endl
              << "关键字：" << endl
-             << "  add：添加一个程序到快速启动" << endl
+             << "  add：添加一个程序到快速启动!" << endl
              << "    使用方法：" << argv[0] << " add program_name program_path program_params..." << endl
              << "  del：删除一个快速启动程序" << endl
              << "    使用方法：" << argv[0] << " del program_name" << endl
