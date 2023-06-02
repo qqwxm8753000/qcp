@@ -15,6 +15,7 @@ jobs:
           msvc-version: 'Latest'
       - name: Build
         run: |
+          vcpkg install nlohmann-json:x64-windows
           mkdir build
           cd build
           cmake ..
